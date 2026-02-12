@@ -22,6 +22,7 @@ return new class extends Migration
             $table->unsignedInteger('surcharge_per_player')->nullable();
             $table->boolean('is_active')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

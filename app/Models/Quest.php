@@ -23,9 +23,7 @@ class Quest extends Model
         'playtime',
         'players_min',
         'players_max',
-        'players_base_limit',
-        'surcharge_price',
-        'base_price',
+        'pricing_rule_id',
         'location_id',
         'short_description',
         'full_description',
@@ -61,6 +59,11 @@ class Quest extends Model
     public function author(): BelongsTo
     {
         return $this->belongsTo(User::class, 'author_id');
+    }
+
+    public function pricingRule(): BelongsTo
+    {
+        return $this->belongsTo(PricingRule::class);
     }
 
     public function location(): BelongsTo

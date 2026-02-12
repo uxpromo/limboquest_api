@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\V1\Admin\Quest;
 
+use App\Http\Resources\V1\Admin\PricingRule\PricingRuleResource;
 use App\Models\Quest;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -22,9 +23,8 @@ class QuestResource extends JsonResource
             'playtime' => $this->playtime,
             'players_min' => $this->players_min,
             'players_max' => $this->players_max,
-            'players_base_limit' => $this->players_base_limit,
-            'surcharge_price' => $this->surcharge_price,
-            'base_price' => $this->base_price,
+            'pricing_rule_id' => $this->pricing_rule_id,
+            'pricing_rule' => $this->whenLoaded('pricingRule', fn () => new PricingRuleResource($this->pricingRule)),
             'location_id' => $this->location_id,
             'short_description' => $this->short_description,
             'full_description' => $this->full_description,

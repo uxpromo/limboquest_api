@@ -3,13 +3,16 @@
 namespace App\Models;
 
 use App\Policies\V1\Admin\PricingRulePolicy;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Attributes\UsePolicy;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 #[UsePolicy(PricingRulePolicy::class)]
 class PricingRule extends Model
 {
+    use SoftDeletes;
     protected $fillable = [
         'name',
         'description',
@@ -43,6 +46,11 @@ class PricingRule extends Model
     public function scopeForGiftCards(Builder $query): Builder
     {
         return $query->where('is_for_gift_cards', true);
+    }
+
+    public function quests(): HasMany
+    {
+        return $this->hasMany(Quest::class);
     }
 
     /**
