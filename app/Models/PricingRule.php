@@ -2,9 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Policies\V1\Admin\PricingRulePolicy;
+use Illuminate\Database\Eloquent\Attributes\UsePolicy;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 
+#[UsePolicy(PricingRulePolicy::class)]
 class PricingRule extends Model
 {
     protected $fillable = [

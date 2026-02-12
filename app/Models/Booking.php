@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use App\Enums\BookingStatusEnum;
+use App\Policies\V1\Admin\BookingPolicy;
+use Illuminate\Database\Eloquent\Attributes\UsePolicy;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+#[UsePolicy(BookingPolicy::class)]
 class Booking extends Model
 {
     protected $fillable = [

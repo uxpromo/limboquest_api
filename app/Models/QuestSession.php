@@ -3,13 +3,18 @@
 namespace App\Models;
 
 use App\Enums\BookingStatusEnum;
+use App\Policies\V1\Admin\QuestSessionPolicy;
+use App\Traits\HasAuthor;
+use Illuminate\Database\Eloquent\Attributes\UsePolicy;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
+#[UsePolicy(QuestSessionPolicy::class)]
 class QuestSession extends Model
 {
+    use HasAuthor;
     protected $fillable = [
         'author_id',
         'quest_id',

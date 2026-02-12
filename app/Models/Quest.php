@@ -2,14 +2,18 @@
 
 namespace App\Models;
 
+use App\Policies\V1\Admin\QuestPolicy;
+use App\Traits\HasAuthor;
+use Illuminate\Database\Eloquent\Attributes\UsePolicy;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+#[UsePolicy(QuestPolicy::class)]
 class Quest extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, HasAuthor;
 
     protected $fillable = [
         'author_id',
