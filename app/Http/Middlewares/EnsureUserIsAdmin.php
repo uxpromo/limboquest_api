@@ -15,7 +15,8 @@ class EnsureUserIsAdmin
     public function handle(Request $request, Closure $next): Response
     {
         if (!$request->user() instanceof User) {
-            abort(403, 'Access denied. Admin or expert access required.');
+            //TODO: более реальная проверка на админа
+            abort(403, 'Access denied. Admin access required.');
         }
 
         return $next($request);

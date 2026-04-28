@@ -25,7 +25,8 @@ return new class extends Migration
             $table->text('short_description')->nullable();
             $table->text('full_description')->nullable();
             $table->text('additional_info')->nullable();
-            $table->text('age_rating')->nullable(); // e.g. "12+", "18+"
+            $table->string('age_rating')->nullable(); // e.g. "12+", "18+"
+            $table->text('age_rating_description')->nullable();
             $table->boolean('is_visible')->default(false);
             $table->boolean('is_in_dev')->default(false);
             $table->text('opening_date_text')->nullable(); // e.g. "spring 2026"

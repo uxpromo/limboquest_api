@@ -8,7 +8,7 @@ enum BookingStatusEnum: string
     case Confirmed = 'confirmed';
     case Cancelled = 'cancelled';
     case Completed = 'completed';
-    case Absent = 'absent'; // неявка: не отменил бронь, не пришёл (для чёрного списка убыточных игроков)
+    case Absent = 'absent'; // неявка: не отменил бронь, не пришёл
 
     /**
      * Статусы, при которых бронь считается активной (сеанс занят).

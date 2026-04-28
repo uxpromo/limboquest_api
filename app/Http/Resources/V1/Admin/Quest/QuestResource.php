@@ -30,6 +30,7 @@ class QuestResource extends JsonResource
             'full_description' => $this->full_description,
             'additional_info' => $this->additional_info,
             'age_rating' => $this->age_rating,
+            'age_rating_description' => $this->age_rating_description,
             'is_visible' => $this->is_visible,
             'is_in_dev' => $this->is_in_dev,
             'opening_date_text' => $this->opening_date_text,

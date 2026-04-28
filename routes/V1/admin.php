@@ -17,7 +17,11 @@ Route::prefix('auth')->name('auth.')->group(function () {
     Route::post('password_reset/{token}', [AuthController::class, 'passwordReset'])->name('password.reset');
 });
 
-Route::middleware(['auth:sanctum', 'admin'])->group(function () {
+Route::middleware([
+    //TODO:
+    //'auth:sanctum', 
+    //'admin'
+    ])->group(function () {
     Route::prefix('auth')->name('auth.')->group(function () {
         Route::get('user', [AuthController::class, 'user'])->name('user');
     });

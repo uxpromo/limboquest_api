@@ -29,6 +29,7 @@ class Quest extends Model
         'full_description',
         'additional_info',
         'age_rating',
+        'age_rating_description',
         'is_visible',
         'is_in_dev',
         'opening_date_text',

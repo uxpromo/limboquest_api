@@ -21,6 +21,7 @@ class QuestUpdateRequest extends BaseFormRequest
             'full_description' => ['nullable', 'string'],
             'additional_info' => ['nullable', 'string'],
             'age_rating' => ['nullable', 'string', 'max:50'],
+            'age_rating_description' => ['nullable', 'string'],
             'is_visible' => ['required', 'boolean'],
             'is_in_dev' => ['required', 'boolean'],
             'opening_date_text' => ['nullable', 'string', 'max:255'],
