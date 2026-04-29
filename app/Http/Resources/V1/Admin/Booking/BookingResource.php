@@ -29,7 +29,6 @@ class BookingResource extends JsonResource
             'manual_discount' => $this->manual_discount,
             'manual_discount_reason' => $this->manual_discount_reason,
             'notes' => $this->notes,
-            'booking_code' => $this->booking_code,
             'play_time' => $this->play_time,
             'winners' => $this->winners,
             'hints' => $this->hints,

@@ -24,7 +24,6 @@ class BookingUpdateRequest extends BaseFormRequest
             'manual_discount' => ['nullable', 'integer', 'min:0'],
             'manual_discount_reason' => ['nullable', 'string', 'max:255'],
             'notes' => ['nullable', 'string'],
-            'booking_code' => ['required', 'string', 'max:255', Rule::unique('bookings', 'booking_code')->ignore($this->route('booking'))],
             'play_time' => ['nullable', 'integer', 'min:0'],
             'winners' => ['nullable', 'boolean'],
             'hints' => ['nullable', 'integer', 'min:0'],

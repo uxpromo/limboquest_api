@@ -27,7 +27,6 @@ return new class extends Migration
             $table->unsignedInteger('manual_discount')->default(0);
             $table->string('manual_discount_reason')->nullable();
             $table->text('notes')->nullable();
-            $table->string('booking_code')->unique();
             $table->unsignedInteger('play_time')->nullable(); // секунды, статистика
             $table->boolean('winners')->nullable(); // победный статус, статистика
             $table->unsignedSmallInteger('hints')->nullable(); // количество подсказок, статистика

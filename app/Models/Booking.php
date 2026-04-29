@@ -26,7 +26,6 @@ class Booking extends Model
         'manual_discount',
         'manual_discount_reason',
         'notes',
-        'booking_code',
         'play_time',
         'winners',
         'hints',

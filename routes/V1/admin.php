@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\V1\Admin\AuthController;
+use App\Http\Controllers\V1\Admin\CommentController;
 use App\Http\Controllers\V1\Admin\LocationController;
 use App\Http\Controllers\V1\Admin\QuestController;
 use App\Http\Controllers\V1\Admin\BookingController;
@@ -27,6 +28,7 @@ Route::middleware([
     });
 
     Route::apiResources([
+        'comments' => CommentController::class,
         'locations' => LocationController::class,
         'quests' => QuestController::class,
         'quest_sessions' => QuestSessionController::class,
