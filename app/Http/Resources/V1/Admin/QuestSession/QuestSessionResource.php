@@ -20,6 +20,7 @@ class QuestSessionResource extends JsonResource
             'starts_at' => $this->starts_at?->toIso8601String(),
             'duration' => $this->duration,
             'pricing_rule_id' => $this->pricing_rule_id,
+            'is_active' => $this->is_active,
             'prepayment_only' => $this->prepayment_only,
             'notes' => $this->notes,
             'created_at' => $this->created_at,

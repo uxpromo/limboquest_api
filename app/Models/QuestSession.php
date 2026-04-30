@@ -21,6 +21,7 @@ class QuestSession extends Model
         'starts_at',
         'duration',
         'pricing_rule_id',
+        'is_active',
         'prepayment_only',
         'notes',
     ];
@@ -29,6 +30,7 @@ class QuestSession extends Model
     {
         return [
             'starts_at' => 'datetime',
+            'is_active' => 'boolean',
             'prepayment_only' => 'boolean',
         ];
     }
@@ -39,6 +41,10 @@ class QuestSession extends Model
     protected function isAvailableForBooking(): Attribute
     {
         return Attribute::get(function (): bool {
+            if (! $this->is_active) {
+                return false;
+            }
+
             if (! $this->starts_at->isFuture()) {
                 return false;
             }

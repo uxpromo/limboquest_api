@@ -45,6 +45,10 @@ class AuthController extends Controller
     public function user(Request $request): ApiResponse
     {
         $user = $request->user();
+        if (!$user) {
+            return $this->apiResponse->error(401)->withMessage('Пользователь не авторизован');
+        }
+
         return $this->apiResponse->success()->withData(new CurrentUserResource($user, $request));
     }
 

@@ -19,9 +19,8 @@ Route::prefix('auth')->name('auth.')->group(function () {
 });
 
 Route::middleware([
-    //TODO:
-    //'auth:sanctum', 
-    //'admin'
+    'auth:sanctum', 
+    'admin'
     ])->group(function () {
     Route::prefix('auth')->name('auth.')->group(function () {
         Route::get('user', [AuthController::class, 'user'])->name('user');

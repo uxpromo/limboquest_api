@@ -13,6 +13,7 @@ class QuestSessionStoreRequest extends BaseFormRequest
             'starts_at' => ['required', 'date'],
             'duration' => ['nullable', 'integer', 'min:0'],
             'pricing_rule_id' => ['required', 'integer', 'exists:pricing_rules,id'],
+            'is_active' => ['nullable', 'boolean'],
             'prepayment_only' => ['required', 'boolean'],
             'notes' => ['nullable', 'string'],
         ];

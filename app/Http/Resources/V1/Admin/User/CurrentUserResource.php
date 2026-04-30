@@ -30,8 +30,8 @@ class CurrentUserResource extends JsonResource
             'last_login_at' => $this->last_login_at,
 
             // Роли и права будут управляться пакетом
-            'roles' => $this->whenLoaded('roles'),
-            'permissions' => $this->whenLoaded('permissions'),
+            // 'roles' => $this->whenLoaded('roles'),
+            // 'permissions' => $this->whenLoaded('permissions'),
         ];
     }
 }
